@@ -1,0 +1,18 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <reference id="stockQuoteServiceBean" interface="webservicex.wrapper.StockQuoteService" />
+
+    <reference id="StockQuoteStubService"
+        interface="webservicex.wrapper.StockQuoteService" />
+
+    <bean id="getQuoteCommand" class="org.apache.karaf.shell.samples.getquote_command.GetQuoteCommand">
+        <property name="service" ref="StockQuoteStubService" />
+    </bean>
+
+    <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.0.0">
+        <command name="test/hello">
+            <action class="org.apache.karaf.shell.samples.getquote_command.GetQuoteCommand"/>
+        </command>
+    </command-bundle>
+
+</blueprint>
