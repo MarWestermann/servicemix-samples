@@ -11,7 +11,7 @@ public class HelloBean {
 	StockQuoteService service = null;
 	
    public String getActualQuote() {
-	   return service.getQuote("AMZ");
+	   return service.getQuote("AMZN");
    }
 
 public StockQuoteService getService() {
